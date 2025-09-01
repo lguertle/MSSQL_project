@@ -76,7 +76,7 @@ The analysis focuses on:
 
 ## ERD – Entity Relationship Diagram
 
-The following ERD shows the main relationships between tables in the WideWorldsImporter database:
+The following ERD shows the main relationships between the sales tables in the WideWorldsImporter database:
 
 
 
