@@ -175,7 +175,7 @@ By aligning indexes with filtering, grouping, and joining patterns:
 
 
 
-## 📈 Power BI Report
+## Power BI Report
 
 The final analysis is presented in an interactive **Power BI dashboard**, showcasing KPIs, charts, and trends for better decision-making.
 
@@ -189,7 +189,7 @@ The final analysis is presented in an interactive **Power BI dashboard**, showca
 
 
 
-## 📌 Key Learnings
+## Key Learnings
 
 - Designing and documenting a database with an ERD
 
