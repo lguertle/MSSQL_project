@@ -4,21 +4,21 @@
 
 ## Table of Contents
 
-1. [Project Overview](#-project-overview)
+1. [Project Overview](#project-overview)
 
-2. [Dataset Presentation](#-dataset-presentation)
+2. [Dataset Presentation](#dataset-presentation)
 
-3. [Sales Analysis](#-sales-analysis)
+3. [Sales Analysis](#sales-analysis)
 
-4. [Entity Relationship Diagram (ERD)](#-erd--entity-relationship-diagram)
+4. [Entity Relationship Diagram (ERD)](#erd--entity-relationship-diagram)
 
-5. [Stored Procedures](#️-stored-procedures)
+5. [Stored Procedures](#️stored-procedures)
 
-6. [SQL Optimization](#-sql-optimization)
+6. [SQL Optimization](#sql-optimization)
 
-7. [Power BI Report](#-power-bi-report)
+7. [Power BI Report](#power-bi-report)
 
-8. [Key Learnings](#-key-learnings)
+8. [Key Learnings](#key-learnings)
 
 
 
