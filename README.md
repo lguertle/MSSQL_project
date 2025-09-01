@@ -169,7 +169,17 @@ By aligning indexes with filtering, grouping, and joining patterns:
 
 ## Power BI Report
 
-The final analysis is presented in an interactive **Power BI dashboard**, showcasing KPIs, charts, and trends for better decision-making.
+The final analysis is presented in an interactive **Power BI dashboard**, showcasing charts and sales trends for better decision-making.  
+This allows users to quickly identify which products generate higher sales each month.  
+
+For example, the month of February appears to have a lower average sales compared to other months.  
+To understand the underlying reason for this phenomenon, we could drill down further into the data by:  
+- Comparing regional performance to see if the drop is market-specific  
+- Reviewing product categories to identify weaker segments  
+- Analyzing promotional campaigns or discounts that might have influenced demand  
+- Considering external factors such as seasonality, holidays, or supply chain disruptions  
+
+Such insights help the business adjust strategies, optimize inventory, and plan targeted marketing actions to improve sales performance in future periods.
 
 
 
