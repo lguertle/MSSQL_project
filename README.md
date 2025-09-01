@@ -1,40 +1,24 @@
-\# MSSQL Project – WideWorldsImporter Sales Analysis
+# MSSQL Project – WideWorldsImporter Sales Analysis
 
 
 
-\## 📑 Table of Contents
+## 📑 Table of Contents
 
-1\. \[Project Overview](#-project-overview)
+1. [Project Overview](#-project-overview)
 
-2\. \[Dataset Presentation](#-dataset-presentation)
+2. [Dataset Presentation](#-dataset-presentation)
 
-3\. \[Sales Analysis](#-sales-analysis)
+3. [Sales Analysis](#-sales-analysis)
 
-4\. \[Entity Relationship Diagram (ERD)](#-erd--entity-relationship-diagram)
+4. [Entity Relationship Diagram (ERD)](#-erd--entity-relationship-diagram)
 
-5\. \[Stored Procedures](#️-stored-procedures)
+5. [Stored Procedures](#️-stored-procedures)
 
-6\. \[SQL Optimization](#-sql-optimization)
+6. [SQL Optimization](#-sql-optimization)
 
-7\. \[Power BI Report](#-power-bi-report)
+7. [Power BI Report](#-power-bi-report)
 
-8\. \[Key Learnings](#-key-learnings)
-
-
-
----
-
-
-
-\## 📊 Project Overview
-
-This project is based on the \*\*WideWorldsImporter dataset\*\*, a sample database provided by Microsoft that simulates an international wholesale company.
-
-The dataset contains information about customers, suppliers, sales, purchases, stock levels, and employee details, which makes it ideal for practicing \*\*data analysis and optimization techniques\*\*.
-
-
-
-The focus of this project is on \*\*Sales Analysis\*\*, using T-SQL, stored procedures, optimization strategies, and visualization with Power BI.
+8. [Key Learnings](#-key-learnings)
 
 
 
@@ -42,21 +26,15 @@ The focus of this project is on \*\*Sales Analysis\*\*, using T-SQL, stored proc
 
 
 
-\## 🗂 Dataset Presentation
+## 📊 Project Overview
 
-The \*\*WideWorldsImporter\*\* dataset includes:
+This project is based on the **WideWorldsImporter dataset**, a sample database provided by Microsoft that simulates an international wholesale company.
 
-\- Customers and suppliers
-
-\- Sales orders and invoices
-
-\- Stock and product information
-
-\- Employees and purchasing details
+The dataset contains information about customers, suppliers, sales, purchases, stock levels, and employee details, which makes it ideal for practicing **data analysis and optimization techniques**.
 
 
 
-This rich dataset provides a realistic environment to explore \*\*business intelligence and reporting\*\*.
+The focus of this project is on **Sales Analysis**, using T-SQL, stored procedures, optimization strategies, and visualization with Power BI.
 
 
 
@@ -64,17 +42,39 @@ This rich dataset provides a realistic environment to explore \*\*business intel
 
 
 
-\## 🏪 Sales Analysis
+## 🗂 Dataset Presentation
+
+The **WideWorldsImporter** dataset includes:
+
+- Customers and suppliers
+
+- Sales orders and invoices
+
+- Stock and product information
+
+- Employees and purchasing details
+
+
+
+This rich dataset provides a realistic environment to explore **business intelligence and reporting**.
+
+
+
+---
+
+
+
+## 🏪 Sales Analysis
 
 The analysis focuses on:
 
-\- Total sales per region and customer category
+- Total sales per region and customer category
 
-\- Monthly and yearly revenue trends
+- Monthly and yearly revenue trends
 
-\- Best-selling products and suppliers
+- Best-selling products and suppliers
 
-\- Employee sales performance
+- Employee sales performance
 
 
 
@@ -82,13 +82,13 @@ The analysis focuses on:
 
 
 
-\## 🗺 ERD – Entity Relationship Diagram
+## 🗺 ERD – Entity Relationship Diagram
 
 The following ERD shows the main relationships between tables in the WideWorldsImporter database:
 
 
 
-!\[ERD](docs/ERD.png)
+![ERD](docs/ERD.png)
 
 
 
@@ -96,17 +96,17 @@ The following ERD shows the main relationships between tables in the WideWorldsI
 
 
 
-\## ⚙️ Stored Procedures
+## ⚙️ Stored Procedures
 
-A set of \*\*stored procedures\*\* were created to:
+A set of **stored procedures** were created to:
 
-\- Automate repetitive queries
+- Automate repetitive queries
 
-\- Generate sales reports (e.g., monthly/yearly revenue, top products)
+- Generate sales reports (e.g., monthly/yearly revenue, top products)
 
-\- Simplify data retrieval for Power BI
+- Simplify data retrieval for Power BI
 
-\- Improve maintainability and modularity of the SQL code
+- Improve maintainability and modularity of the SQL code
 
 
 
@@ -114,17 +114,17 @@ A set of \*\*stored procedures\*\* were created to:
 
 
 
-\## 🚀 SQL Optimization
+## 🚀 SQL Optimization
 
 SQL queries were optimized by:
 
-\- Adding appropriate indexes
+- Adding appropriate indexes
 
-\- Reducing nested queries
+- Reducing nested queries
 
-\- Using joins effectively instead of subqueries
+- Using joins effectively instead of subqueries
 
-\- Applying query execution plan analysis
+- Applying query execution plan analysis
 
 
 
@@ -132,7 +132,7 @@ Results of the optimization process:
 
 
 
-!\[SQL Optimization](docs/sql\_optimization\_results.png)
+![SQL Optimization](docs/sql_optimization_results.png)
 
 
 
@@ -140,13 +140,13 @@ Results of the optimization process:
 
 
 
-\## 📈 Power BI Report
+## 📈 Power BI Report
 
-The final analysis is presented in an interactive \*\*Power BI dashboard\*\*, showcasing KPIs, charts, and trends for better decision-making.
+The final analysis is presented in an interactive **Power BI dashboard**, showcasing KPIs, charts, and trends for better decision-making.
 
 
 
-!\[PowerBI Report](docs/Report\_powerBI.gif)
+![PowerBI Report](docs/Report_powerBI.gif)
 
 
 
@@ -154,13 +154,13 @@ The final analysis is presented in an interactive \*\*Power BI dashboard\*\*, sh
 
 
 
-\## 📌 Key Learnings
+## 📌 Key Learnings
 
-\- Designing and documenting a database with an ERD
+- Designing and documenting a database with an ERD
 
-\- Creating and optimizing stored procedures
+- Creating and optimizing stored procedures
 
-\- Understanding query performance and SQL optimization
+- Understanding query performance and SQL optimization
 
-\- Building a full reporting pipeline from SQL to Power BI
+- Building a full reporting pipeline from SQL to Power BI
 
