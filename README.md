@@ -173,7 +173,7 @@ By aligning indexes with filtering, grouping, and joining patterns:
 
 ![SQL Optimization](docs/sql_optimization_results.png)
 
-
+---
 
 ## Power BI Report
 
