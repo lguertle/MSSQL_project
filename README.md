@@ -2,7 +2,7 @@
 
 
 
-## 📑 Table of Contents
+## Table of Contents
 
 1. [Project Overview](#-project-overview)
 
@@ -26,7 +26,7 @@
 
 
 
-## 📊 Project Overview
+## Project Overview
 
 This project is based on the **WideWorldsImporter dataset**, a sample database provided by Microsoft that simulates an international wholesale company.
 
@@ -42,7 +42,7 @@ The focus of this project is on **Sales Analysis**, using T-SQL, stored procedur
 
 
 
-## 🗂 Dataset Presentation
+## Dataset Presentation
 
 The **WideWorldsImporter** dataset includes:
 
@@ -64,7 +64,7 @@ This rich dataset provides a realistic environment to explore **business intelli
 
 
 
-## 🏪 Sales Analysis
+## Sales Analysis
 
 The analysis focuses on:
 
@@ -82,7 +82,7 @@ The analysis focuses on:
 
 
 
-## 🗺 ERD – Entity Relationship Diagram
+## ERD – Entity Relationship Diagram
 
 The following ERD shows the main relationships between tables in the WideWorldsImporter database:
 
@@ -96,7 +96,7 @@ The following ERD shows the main relationships between tables in the WideWorldsI
 
 
 
-## ⚙️ Stored Procedures
+## Stored Procedures
 
 A set of **stored procedures** were created to:
 
@@ -114,29 +114,64 @@ A set of **stored procedures** were created to:
 
 
 
-## 🚀 SQL Optimization
+## SQL Optimization
 
-SQL queries were optimized by:
+### Initial Query
+**File:** [`sql/optimization/query_to_optimize.sql`](sql/optimization/query_to_optimize.sql)  
 
-- Adding appropriate indexes
+- Computes revenue inline with `SUM(Quantity * UnitPrice)`  
+- Uses forced index hints (`WITH (INDEX(0))`) which prevent the optimizer from using better indexes  
+- Results in full table scans and heavy CPU usage
 
-- Reducing nested queries
+### Optimized Query
+**File:** [`sql/optimization/query_optimized.sql`](sql/optimization/query_optimized.sql)  
 
-- Using joins effectively instead of subqueries
+- Adds a **persisted computed column** `LineAmount = Quantity * UnitPrice`  
+- Pre-aggregates totals per `OrderID` in a CTE before joining → reduces row volume  
+- Removes forced index hints, allowing the optimizer to use the best indexes  
 
-- Applying query execution plan analysis
+### Indexing Strategy
+**File:** [`sql/optimization/optimization.sql`](sql/optimization/optimization.sql)  
 
+- **Orders Table**
+  ```sql
+  CREATE NONCLUSTERED INDEX IX_Orders_OrderDate_CustomerID
+  ON Sales.Orders (OrderDate, CustomerID)
+  INCLUDE (OrderID);
+- Supports **range filters** on `OrderDate` (`@StartTime`, `@EndTime`)  
+- Groups efficiently by `CustomerID`  
+- Covers joins via included `OrderID`  
 
-
-Results of the optimization process:
-
-
-
-![SQL Optimization](docs/sql_optimization_results.png)
-
-
+- **OrderLines Table**
+  ```sql
+  CREATE NONCLUSTERED INDEX IX_OrderLines_OrderID_LineAmount
+  ON Sales.OrderLines (OrderID)
+  INCLUDE (LineAmount);
+- Optimizes the join on `OrderID`  
+- Covers the pre-aggregation `SUM(LineAmount)`  
 
 ---
+
+### Measuring the Improvement
+**File:** [`sql/optimization/getPerformanceDiff.sql`](sql/optimization/getPerformanceDiff.sql)  
+
+Leverages **Query Store** to compare the original and optimized procedures:
+- Execution count  
+- Average duration (ms)  
+- CPU time (ms)  
+- Logical reads  
+- Last execution timestamp  
+
+---
+
+### Results
+By aligning indexes with filtering, grouping, and joining patterns:
+- **I/O reduced** → fewer page reads due to selective seeks  
+- **CPU reduced** → persisted computed column avoids per-row multiplication  
+- **Less memory pressure** → early aggregation reduces rowset size  
+- **Execution time** improves significantly  
+
+![SQL Optimization](docs/sql_optimization_results.png)
 
 
 
